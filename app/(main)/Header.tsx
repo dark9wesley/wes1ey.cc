@@ -30,6 +30,8 @@ import { Container } from '~/components/ui/Container'
 import { Tooltip } from '~/components/ui/Tooltip'
 import { url } from '~/lib'
 import { clamp } from '~/lib/math'
+
+import { Activity } from './Activity'
 export function Header() {
   const isHomePage = usePathname() === '/'
 
@@ -242,7 +244,7 @@ export function Header() {
             }}
           >
             <div className="relative flex justify-between gap-4">
-              {/* <motion.div
+              <motion.div
                 className="flex flex-1"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -265,7 +267,7 @@ export function Header() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div> */}
+              </motion.div>
               <div></div>
               <div className="flex">
                 <div className="flex flex-1 justify-end md:justify-center">
@@ -282,7 +284,7 @@ export function Header() {
                   </div>
                 </motion.div>
               </div>
-              {/* 
+
               <AnimatePresence>
                 {!isHomePage && (
                   <motion.div
@@ -297,7 +299,7 @@ export function Header() {
                     <Activity />
                   </motion.div>
                 )}
-              </AnimatePresence> */}
+              </AnimatePresence>
             </div>
           </Container>
         </div>

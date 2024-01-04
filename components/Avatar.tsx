@@ -1,17 +1,12 @@
 import { type ComponentProps } from '@zolplay/react'
 import { clsxm } from '@zolplay/utils'
+import Image from 'next/image'
 import Link, { type LinkProps } from 'next/link'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 function AvatarContainer({ className, ...props }: ComponentProps) {
-  return (
-    <div
-      className={clsxm(
-        className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
-      )}
-      {...props}
-    />
-  )
+  return <div className={clsxm(className, 'h-10 w-10 p-0.5')} {...props} />
 }
 
 type AvatarImageProps = ComponentProps &
@@ -27,6 +22,17 @@ function AvatarImage({
   alt,
   ...props
 }: AvatarImageProps) {
+  const { theme } = useTheme()
+  const [imageHref, setImageHref] = useState('')
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      setImageHref('/wes-white.png')
+    } else {
+      setImageHref('/wes-dark.png')
+    }
+  }, [theme])
+
   return (
     <Link
       aria-label="主页"
@@ -34,16 +40,14 @@ function AvatarImage({
       href={href ?? '/'}
       {...props}
     >
-      {/* <Image
-        src=""
+      <Image
+        src={imageHref}
+        width={large ? 64 : 36}
+        height={large ? 64 : 36}
         alt=""
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsxm(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
-        )}
+        className={clsxm('object-cover')}
         priority
-      /> */}
+      />
     </Link>
   )
 }
