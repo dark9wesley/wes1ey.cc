@@ -17,7 +17,7 @@ import {
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { NavigationBar } from '~/app/(main)/NavigationBar'
+import NavigationBar from '~/app/(main)/NavigationBar'
 import { ThemeSwitcher } from '~/app/(main)/ThemeSwitcher'
 import {
   GitHubBrandIcon,
@@ -241,8 +241,8 @@ export function Header() {
                 'var(--header-inner-position)' as React.CSSProperties['position'],
             }}
           >
-            <div className="relative flex gap-4">
-              <motion.div
+            <div className="relative flex justify-between gap-4">
+              {/* <motion.div
                 className="flex flex-1"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -265,21 +265,23 @@ export function Header() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
-              <div className="flex flex-1 justify-end md:justify-center">
-                <NavigationBar.Mobile className="pointer-events-auto relative z-50 md:hidden" />
-                <NavigationBar.Desktop className="pointer-events-auto relative z-50 hidden md:block" />
-              </div>
-              <motion.div
-                className="flex justify-end gap-3 md:flex-1"
-                initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-              >
-                <UserInfo />
-                <div className="pointer-events-auto">
-                  <ThemeSwitcher />
+              </motion.div> */}
+              <div></div>
+              <div className="flex">
+                <div className="flex flex-1 justify-end md:justify-center">
+                  <NavigationBar className="pointer-events-auto relative z-50" />
                 </div>
-              </motion.div>
+                <motion.div
+                  className="flex justify-end gap-3 md:flex-1"
+                  initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                >
+                  {/* <UserInfo /> */}
+                  <div className="pointer-events-auto">
+                    <ThemeSwitcher />
+                  </div>
+                </motion.div>
+              </div>
               {/* 
               <AnimatePresence>
                 {!isHomePage && (
