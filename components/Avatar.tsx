@@ -27,9 +27,9 @@ function AvatarImage({
 
   useEffect(() => {
     if (resolvedTheme === 'light') {
-      setImageHref('/wes-dark.png')
+      setImageHref('/wes-dark.svg')
     } else {
-      setImageHref('/wes-white.png')
+      setImageHref('/wes-white.svg')
     }
   }, [resolvedTheme])
 
@@ -46,6 +46,28 @@ function AvatarImage({
         height={large ? 64 : 36}
         alt=""
         className={clsxm('object-cover')}
+        priority
+        fetchPriority="high"
+        unoptimized
+      />
+      {/* proload */}
+      <Image
+        src={'/wes-dark.svg'}
+        width={0}
+        height={0}
+        alt=""
+        className="hidden"
+        priority
+        fetchPriority="high"
+        unoptimized
+      />
+      {/* proload */}
+      <Image
+        src={'/wes-white.svg'}
+        width={0}
+        height={0}
+        alt=""
+        className="hidden"
         priority
         fetchPriority="high"
         unoptimized
