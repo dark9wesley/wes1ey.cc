@@ -22,16 +22,16 @@ function AvatarImage({
   alt,
   ...props
 }: AvatarImageProps) {
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [imageHref, setImageHref] = useState('')
 
   useEffect(() => {
-    if (theme === 'dark') {
-      setImageHref('/wes-white.png')
-    } else {
+    if (resolvedTheme === 'light') {
       setImageHref('/wes-dark.png')
+    } else {
+      setImageHref('/wes-white.png')
     }
-  }, [theme])
+  }, [resolvedTheme])
 
   return (
     <Link
