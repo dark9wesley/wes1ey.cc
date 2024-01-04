@@ -47,6 +47,8 @@ function AvatarImage({
         alt=""
         className={clsxm('object-cover')}
         priority
+        fetchPriority="high"
+        unoptimized
       />
     </Link>
   )

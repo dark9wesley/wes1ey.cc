@@ -30,7 +30,10 @@ export function PortableTextImage({
   )
 
   return (
-    <div data-blockid={value._key} className="group relative pr-3 md:pr-0">
+    <div
+      data-blockid={value._key}
+      className="group relative flex justify-center pr-3 md:pr-0"
+    >
       <ClientOnly>
         <Commentable className="z-30" blockId={value._key} />
       </ClientOnly>

@@ -52,7 +52,7 @@ const iconMapper: { [key: string]: PlatformInfo } = {
     platform: 'bilibili',
     label: '哔哩哔哩',
   },
-  '(?:mailto:)': { icon: MailIcon, platform: 'mail', label: '邮箱地址' },
+  '(?:mailto:)': { icon: MailIcon, platform: 'mail', label: 'Email' },
   '(?:feed.xml)': { icon: AtomIcon, platform: 'rss', label: 'RSS 订阅' },
 }
 
