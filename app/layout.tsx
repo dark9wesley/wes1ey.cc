@@ -3,7 +3,7 @@ import './clerk.css'
 import './prism.css'
 
 import { ClerkProvider } from '@clerk/nextjs'
-import { type Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { ThemeProvider } from '~/app/(main)/ThemeProvider'
 import { url } from '~/lib'
