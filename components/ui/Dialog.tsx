@@ -11,7 +11,6 @@ const Root = DialogPrimitive.Root
 const Trigger = DialogPrimitive.Trigger
 
 const DialogPortal = ({
-  className,
   children,
   ...props
 }: DialogPrimitive.DialogPortalProps) => (

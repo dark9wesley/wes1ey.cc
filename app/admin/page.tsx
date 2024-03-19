@@ -21,18 +21,27 @@ export default async function AdminPage() {
       <Grid numItemsMd={2} numItemsLg={3} className="mt-6 gap-6">
         <Card>
           <Text>总评论</Text>
-
-          {count && 'comments' in count && <Metric>{count.comments}</Metric>}
+          {count && 'comments' in count && (
+            <Metric>
+              <>{count.comments}</>
+            </Metric>
+          )}
         </Card>
         <Card>
           <Text>总订阅</Text>
           {count && 'subscribers' in count && (
-            <Metric>{count.subscribers}</Metric>
+            <Metric>
+              <>{count.subscribers}</>
+            </Metric>
           )}
         </Card>
         <Card>
           <Text>总留言</Text>
-          {count && 'guestbook' in count && <Metric>{count.guestbook}</Metric>}
+          {count && 'guestbook' in count && (
+            <Metric>
+              <>{count.guestbook}</>
+            </Metric>
+          )}
         </Card>
       </Grid>
     </>
