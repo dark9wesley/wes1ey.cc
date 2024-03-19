@@ -12,8 +12,8 @@ export const getAllLatestBlogPostSlugsQuery = () =>
   && defined(slug.current)] | order(publishedAt desc).slug.current
   `
 
-export const getAllLatestBlogPostSlugs = () => {
-  return clientFetch<string[]>(getAllLatestBlogPostSlugsQuery())
+export const getAllLatestBlogPostSlugs = (): Promise<string[]> => {
+  return clientFetch(getAllLatestBlogPostSlugsQuery())
 }
 
 type GetBlogPostsOptions = {
@@ -47,8 +47,10 @@ export const getLatestBlogPostsQuery = ({
       }
     }
   }`
-export const getLatestBlogPosts = (options: GetBlogPostsOptions) =>
-  clientFetch<Post[]>(getLatestBlogPostsQuery(options))
+
+export const getLatestBlogPosts = (
+  options: GetBlogPostsOptions
+): Promise<Post[] | null> => clientFetch(getLatestBlogPostsQuery(options))
 
 export const getBlogPostQuery = groq`
   *[_type == "post" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
@@ -94,8 +96,9 @@ export const getBlogPostQuery = groq`
       },
     }
   }`
-export const getBlogPost = (slug: string) =>
-  clientFetch<PostDetail | undefined>(getBlogPostQuery, { slug })
+
+export const getBlogPost = (slug: string): Promise<PostDetail | undefined> =>
+  clientFetch(getBlogPostQuery, { slug })
 
 export const getSettingsQuery = () =>
   groq`
