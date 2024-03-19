@@ -1,6 +1,6 @@
 import { env } from '~/env.mjs'
 
-export const apiVersion = '2023-05-07'
+export const apiVersion = '2024-03-19'
 
 export const dataset = assertValue(
   env.NEXT_PUBLIC_SANITY_DATASET,
