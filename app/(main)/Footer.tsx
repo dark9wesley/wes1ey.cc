@@ -1,4 +1,3 @@
-import { sql } from 'drizzle-orm'
 import Link from 'next/link'
 import React from 'react'
 
@@ -6,7 +5,6 @@ import { CursorClickIcon, UsersIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { kvKeys } from '~/config/kv'
 import { navigationItems } from '~/config/nav'
-import { db } from '~/db'
 import { env } from '~/env.mjs'
 import { prettifyNumber } from '~/lib/math'
 import { redis } from '~/lib/redis'
@@ -94,14 +92,7 @@ async function LastVisitorInfo() {
   )
 }
 
-export async function Footer() {
-  const {
-    rows: [count],
-  } = await db.execute(
-    sql`SELECT 
-    (SELECT COUNT(*) FROM subscribers WHERE subscribed_at IS NOT NULL) as subscribers`
-  )
-
+export function Footer() {
   return (
     <footer className="mt-32">
       <Container.Outer>
