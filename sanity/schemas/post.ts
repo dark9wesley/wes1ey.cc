@@ -93,6 +93,7 @@ export default defineType({
     defineField({
       name: 'readingTime',
       type: readingTimeType.name,
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'body',
       },

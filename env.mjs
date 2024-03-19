@@ -12,6 +12,7 @@ const server = z.object({
   UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
   LINK_PREVIEW_API_BASE_URL: z.string().optional(),
   SITE_NOTIFICATION_EMAIL_TO: z.string().optional(),
+  NEXT_PUBLIC_SITE_LINK_PREVIEW_ENABLED: z.boolean().optional().default(false),
 })
 
 const client = z.object({
@@ -36,6 +37,8 @@ const processEnv = {
   NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
   NEXT_PUBLIC_SANITY_USE_CDN: process.env.NEXT_PUBLIC_SANITY_USE_CDN == 'true',
+  NEXT_PUBLIC_SITE_LINK_PREVIEW_ENABLED:
+    process.env.NEXT_PUBLIC_SITE_LINK_PREVIEW_ENABLED == 'true',
   LINK_PREVIEW_API_BASE_URL: process.env.LINK_PREVIEW_API_BASE_URL,
   SITE_NOTIFICATION_EMAIL_TO: process.env.SITE_NOTIFICATION_EMAIL_TO,
 }
