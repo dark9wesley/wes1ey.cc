@@ -1,5 +1,3 @@
-import { get } from '@vercel/edge-config'
-
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
@@ -16,12 +14,24 @@ const nextConfig = {
     domains: ['cdn.sanity.io'],
   },
 
-  async redirects() {
-    try {
-      return (await get('redirects')) ?? []
-    } catch {
-      return []
-    }
+  redirects() {
+    return [
+      {
+        source: '/twitter',
+        destination: 'https://x.com/dark9wesley',
+        permanent: true,
+      },
+      {
+        source: '/x',
+        destination: 'https://x.com/dark9wesley',
+        permanent: true,
+      },
+      {
+        source: '/github',
+        destination: 'https://github.com/dark9wesley',
+        permanent: true,
+      },
+    ]
   },
 
   rewrites() {
