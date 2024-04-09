@@ -37,12 +37,12 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://twitter.com/weslwin"
+          href="https://twitter.com/dark9wesley"
           aria-label="我的推特"
           platform="twitter"
         />
         <SocialLink
-          href="https://github.com/weslwi"
+          href="https://github.com/dark9wesley"
           aria-label="我的 GitHub"
           platform="github"
         />

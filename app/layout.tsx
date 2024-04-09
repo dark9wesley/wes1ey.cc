@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     url: 'https://wes1ey.cc',
   },
   twitter: {
-    site: '@weslwin',
-    creator: '@weslwin',
+    site: '@dark9wesley',
+    creator: '@dark9wesley',
     card: 'summary_large_image',
     title: seo.title,
     description: seo.description,

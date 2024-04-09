@@ -42,8 +42,8 @@ export const generateMetadata = async ({
       title,
       description,
       card: 'summary_large_image',
-      site: '@weslwin',
-      creator: '@weslwin',
+      site: '@dark9wesley',
+      creator: '@dark9wesley',
     },
   } satisfies Metadata
 }

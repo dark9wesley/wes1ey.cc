@@ -54,14 +54,14 @@ export default function Layout({
               </Text>
               <Text className="text-center">
                 <Link
-                  href="https://twitter.com/weslwin"
+                  href="https://twitter.com/dark9wesley"
                   className="text-xs text-zinc-600 underline"
                 >
                   Twitter
                 </Link>{' '}
                 |&nbsp;
                 <Link
-                  href="https://github.com/weslwi"
+                  href="https://github.com/dark9wesley"
                   className="text-xs text-zinc-600 underline"
                 >
                   GitHub
